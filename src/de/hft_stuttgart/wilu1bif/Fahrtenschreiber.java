@@ -18,6 +18,10 @@ public class Fahrtenschreiber
 {
     // class vars
     static Scanner in = new Scanner (System.in);
+    
+    static int gesamtKilometer;
+    static float gesamtVerbauch;
+    static float gesamtKosten;
 
     /**
      * @param args the command line arguments
