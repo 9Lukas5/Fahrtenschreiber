@@ -99,7 +99,7 @@ public class Fahrtenschreiber
         gesamtVerbauch = (float) ((gesamtVerbrauchInt + spritInt) / 100);
         
         // entstandene Kosten
-        int gesamtKostenInt = (int) (gesamtKosten * 100);
+        int gesamtKostenInt = (int) (gesamtKosten * 10000);
         gesamtKostenInt += (kmInt * kilometerPreis);
         gesamtKostenInt += (spritInt * literpreis);
         
