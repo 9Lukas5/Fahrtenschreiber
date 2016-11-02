@@ -31,4 +31,9 @@ public class Fahrtenschreiber
         // TODO code application logic here
     }
     
+    public static void zeigeGesamtKilometer()
+    {
+        System.out.print("Aktueller Kilometerstand laut Fahrtenbuch: ");
+        System.out.println(gesamtKilometer + "km");
+    }
 }
