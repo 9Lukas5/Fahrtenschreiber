@@ -37,12 +37,18 @@ public class Fahrtenschreiber
         zeigedurchschnittsVerbrauch();
     }
     
+    /**
+     * 
+     */
     public static void zeigeGesamtKilometer()
     {
         System.out.print("Aktueller Kilometerstand laut Fahrtenbuch: ");
         System.out.println(gesamtKilometer + "km.");
     }
     
+    /**
+     * 
+     */
     public static void zeigeGesamtKosten()
     {
         System.out.print("Aktuelle Gesamtkosten laut Fahrtenbuch: ");
@@ -68,7 +74,11 @@ public class Fahrtenschreiber
         System.out.print("Aktuell liegt der Durchschnittsverbrauch bei: ");
         System.out.println(schnitt + "l.");
     }
-    
+    /**
+     * 
+     * @param gefahreneKilometer
+     * @param verbrauchterSprit 
+     */
     public static void fahrtHinzufuegen(float gefahreneKilometer, float verbrauchterSprit)
     {
         // local vars
