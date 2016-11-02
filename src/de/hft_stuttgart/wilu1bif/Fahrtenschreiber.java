@@ -40,7 +40,7 @@ public class Fahrtenschreiber
     public static void zeigeGesamtKosten()
     {
         System.out.print("Aktuelle Gesamtkosten laut Fahrtenbuch: ");
-        System.out.println(gesamtKosten + "€");
+        System.out.println(gesamtKosten + "€.");
     }
     
     /**
