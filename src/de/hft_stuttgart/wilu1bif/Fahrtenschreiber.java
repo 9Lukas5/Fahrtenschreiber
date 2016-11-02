@@ -19,7 +19,7 @@ public class Fahrtenschreiber
     // class vars
     static Scanner in = new Scanner (System.in);
     
-    static int gesamtKilometer;
+    static float gesamtKilometer;
     static float gesamtVerbauch;
     static float gesamtKosten;
 
@@ -29,6 +29,10 @@ public class Fahrtenschreiber
     public static void main(String[] args)
     {
         // TODO code application logic here
+        fahrtHinzufuegen(0, 0);
+        zeigeGesamtKilometer();
+        zeigeGesamtKosten();
+        zeigedurchschnittsVerbrauch();
     }
     
     public static void zeigeGesamtKilometer()
@@ -63,34 +67,42 @@ public class Fahrtenschreiber
         System.out.println(schnitt + "l.");
     }
     
-    public static void fahrtHinzufuegen(int gefahreneKilometer, float verbrauchterSprit)
+    public static void fahrtHinzufuegen(float gefahreneKilometer, float verbrauchterSprit)
     {
         // local vars
         int gesamtVerbrauchInt;
+        int kmInt;
         int spritInt;
-        int kilometerPreis = 20;
-        int literpreis = 130;
+        int kilometerPreis = 20; // in cent
+        int literpreis = 130; // in cent
         
         if (gefahreneKilometer == 0 && verbrauchterSprit == 0)
         {
-        System.out.print("Bitte gefahrene Kilometer eingeben (ganze Kilometer): ");
-        gefahreneKilometer = in.nextInt(); in.nextLine();
+        System.out.print("Bitte gefahrene Kilometer eingeben (max 2 Nachkommastellen): ");
+        gefahreneKilometer = in.nextFloat(); in.nextLine();
         
         System.out.print("Bitte verbrauchten Sprit eingeben (max 2 Nachkommastellen): ");
         verbrauchterSprit = in.nextFloat(); in.nextLine();
         }
         
+        kmInt = (int) (gefahreneKilometer * 100);
         spritInt = (int) (verbrauchterSprit * 100);
         
         // Setze neu Gesamtkilometer
-        gesamtKilometer += gefahreneKilometer;
+        gesamtKilometer = ((gesamtKilometer * 100) + kmInt) / 100;
         
         // Setze neuen Gesamtverbrauch
         gesamtVerbrauchInt = (int) (gesamtVerbauch * 100);
         gesamtVerbauch = (float) ((gesamtVerbrauchInt + spritInt) / 100);
         
         // entstandene Kosten
-        gesamtKosten += ((gefahreneKilometer * kilometerPreis) / 100);
-        gesamtKosten += ((spritInt * literpreis) / 10000);
+        int gesamtKostenInt = (int) (gesamtKosten * 100);
+        gesamtKostenInt += (kmInt * kilometerPreis);
+        gesamtKostenInt += (spritInt * literpreis);
+        
+        gesamtKosten = (float) gesamtKostenInt / 100;
+        gesamtKosten = (int) gesamtKosten;
+        gesamtKosten = (float) gesamtKosten /100;
+        
     }
 }
