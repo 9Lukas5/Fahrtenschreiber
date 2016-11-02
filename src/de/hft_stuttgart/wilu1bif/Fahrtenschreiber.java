@@ -61,7 +61,8 @@ public class Fahrtenschreiber
         // Durchschnitt soll mit bis zu zwei Nachkommastellen angezeigt werden
         int verbrauchAlsInt = (int) (gesamtVerbauch * 10000);
         
-        schnitt = (float) (verbrauchAlsInt / gesamtKilometer) / 100 ;
+        schnitt = (int) (verbrauchAlsInt / gesamtKilometer);
+        schnitt = schnitt / 100;
         
         System.out.print("Aktuell liegt der Durchschnittsverbrauch bei: ");
         System.out.println(schnitt + "l.");
