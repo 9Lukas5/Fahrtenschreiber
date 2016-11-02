@@ -29,6 +29,10 @@ public class Fahrtenschreiber
     public static void main(String[] args)
     {
         // TODO code application logic here
+        fahrtHinzufuegen(0, 0);
+        zeigedurchschnittsVerbrauch();
+        fahrtHinzufuegen(0, 0);
+        zeigedurchschnittsVerbrauch();
     }
     
     public static void zeigeGesamtKilometer()
@@ -61,5 +65,26 @@ public class Fahrtenschreiber
         
         System.out.print("Aktuell liegt der Durchschnittsverbrauch bei: ");
         System.out.println(schnitt + "l.");
+    }
+    
+    public static void fahrtHinzufuegen(int gefahreneKilometer, float verbrauchterSprit)
+    {
+        // local vars
+        int gesamtVerbrauchInt;
+        int spritInt;
+        
+        System.out.print("Bitte gefahrene Kilometer eingeben (ganze Kilometer): ");
+        gefahreneKilometer = in.nextInt(); in.nextLine();
+        
+        System.out.print("Bitte verbrauchten Sprit eingeben (max 2 Nachkommastellen): ");
+        verbrauchterSprit = in.nextFloat(); in.nextLine();
+        spritInt = (int) (verbrauchterSprit * 100);
+        
+        // Setze neu Gesamtkilometer
+        gesamtKilometer += gefahreneKilometer;
+        
+        // Setze neuen Gesamtverbrauch
+        gesamtVerbrauchInt = (int) (gesamtVerbauch * 100);
+        gesamtVerbauch = (float) ((gesamtVerbrauchInt + spritInt) / 100);
     }
 }
