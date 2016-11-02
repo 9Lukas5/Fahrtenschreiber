@@ -36,4 +36,10 @@ public class Fahrtenschreiber
         System.out.print("Aktueller Kilometerstand laut Fahrtenbuch: ");
         System.out.println(gesamtKilometer + "km");
     }
+    
+    public static void zeigeGesamtKosten()
+    {
+        System.out.print("Aktuelle Gesamtkosten laut Fahrtenbuch: ");
+        System.out.println(gesamtKosten + "€");
+    }
 }
