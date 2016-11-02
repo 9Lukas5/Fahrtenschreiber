@@ -29,7 +29,9 @@ public class Fahrtenschreiber
     public static void main(String[] args)
     {
         // TODO code application logic here
-        fahrtHinzufuegen(0, 0);
+        fahrtHinzufuegen(718.6F, 62.48F);
+        fahrtHinzufuegen(687.3F, 60.85F);
+        fahrtHinzufuegen(668.4F, 55.6F);
         zeigeGesamtKilometer();
         zeigeGesamtKosten();
         zeigedurchschnittsVerbrauch();
