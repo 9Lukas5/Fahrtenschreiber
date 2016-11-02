@@ -16,6 +16,8 @@ import java.util.Scanner;
  */
 public class Fahrtenschreiber
 {
+    // class vars
+    static Scanner in = new Scanner (System.in);
 
     /**
      * @param args the command line arguments
