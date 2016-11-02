@@ -29,10 +29,6 @@ public class Fahrtenschreiber
     public static void main(String[] args)
     {
         // TODO code application logic here
-        fahrtHinzufuegen(0, 0);
-        zeigedurchschnittsVerbrauch();
-        fahrtHinzufuegen(0, 0);
-        zeigedurchschnittsVerbrauch();
     }
     
     public static void zeigeGesamtKilometer()
@@ -72,6 +68,8 @@ public class Fahrtenschreiber
         // local vars
         int gesamtVerbrauchInt;
         int spritInt;
+        int kilometerPreis = 20;
+        int literpreis = 130;
         
         System.out.print("Bitte gefahrene Kilometer eingeben (ganze Kilometer): ");
         gefahreneKilometer = in.nextInt(); in.nextLine();
@@ -86,5 +84,9 @@ public class Fahrtenschreiber
         // Setze neuen Gesamtverbrauch
         gesamtVerbrauchInt = (int) (gesamtVerbauch * 100);
         gesamtVerbauch = (float) ((gesamtVerbrauchInt + spritInt) / 100);
+        
+        // entstandene Kosten
+        gesamtKosten += ((gefahreneKilometer * kilometerPreis) / 100);
+        gesamtKosten += ((spritInt * literpreis) / 10000);
     }
 }
