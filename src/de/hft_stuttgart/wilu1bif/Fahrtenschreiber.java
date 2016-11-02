@@ -42,4 +42,24 @@ public class Fahrtenschreiber
         System.out.print("Aktuelle Gesamtkosten laut Fahrtenbuch: ");
         System.out.println(gesamtKosten + "€");
     }
+    
+    /**
+     * Bei verbrauchAlsInt wird der aktuelle Gesamtverbrauch um vier stellen
+     * nach links verschoben und dann in einen Integer gewandelt.
+     * nach der Durchschnittsrechnung muss das Ergebnis wieder um zwei Stellen
+     * nach rechts geschoben werden um ein bis zu zweistelliges Ergebnis zu bekommen.
+     */
+    
+    public static void zeigedurchschnittsVerbrauch()
+    {
+        // local vars
+        float schnitt;
+        // Durchschnitt soll mit bis zu zwei Nachkommastellen angezeigt werden
+        int verbrauchAlsInt = (int) (gesamtVerbauch * 10000);
+        
+        schnitt = (float) (verbrauchAlsInt / gesamtKilometer) / 100 ;
+        
+        System.out.print("Aktuell liegt der Durchschnittsverbrauch bei: ");
+        System.out.println(schnitt + "l.");
+    }
 }
