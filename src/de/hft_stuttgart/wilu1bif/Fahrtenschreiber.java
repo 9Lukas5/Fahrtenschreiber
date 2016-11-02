@@ -55,7 +55,6 @@ public class Fahrtenschreiber
      * nach der Durchschnittsrechnung muss das Ergebnis wieder um zwei Stellen
      * nach rechts geschoben werden um ein bis zu zweistelliges Ergebnis zu bekommen.
      */
-    
     public static void zeigedurchschnittsVerbrauch()
     {
         // local vars
