@@ -5,6 +5,9 @@
  */
 package de.hft_stuttgart.wilu1bif;
 
+// imports
+import java.util.Scanner;
+
 /**
  * 
  * HFT-Stuttgart, Semester 1+, Hausaufgabe 4
