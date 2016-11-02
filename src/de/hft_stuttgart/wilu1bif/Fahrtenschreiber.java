@@ -71,11 +71,15 @@ public class Fahrtenschreiber
         int kilometerPreis = 20;
         int literpreis = 130;
         
+        if (gefahreneKilometer == 0 && verbrauchterSprit == 0)
+        {
         System.out.print("Bitte gefahrene Kilometer eingeben (ganze Kilometer): ");
         gefahreneKilometer = in.nextInt(); in.nextLine();
         
         System.out.print("Bitte verbrauchten Sprit eingeben (max 2 Nachkommastellen): ");
         verbrauchterSprit = in.nextFloat(); in.nextLine();
+        }
+        
         spritInt = (int) (verbrauchterSprit * 100);
         
         // Setze neu Gesamtkilometer
